@@ -8,6 +8,7 @@ public section.
   types:
   begin of TS_ETEST,
      ETESTKEY type string,
+     ETESTBRANCH type string,
   end of TS_ETEST .
   types:
 TT_ETEST type standard table of TS_ETEST .
@@ -100,6 +101,13 @@ lo_property->set_updatable( abap_false ).
 lo_property->set_sortable( abap_false ).
 lo_property->set_nullable( abap_false ).
 lo_property->set_filterable( abap_false ).
+lo_property = lo_entity_type->create_property( iv_property_name = 'EtestBranch' iv_abap_fieldname = 'ETESTBRANCH' ). "#EC NOTEXT
+lo_property->set_type_edm_string( ).
+lo_property->set_creatable( abap_false ).
+lo_property->set_updatable( abap_false ).
+lo_property->set_sortable( abap_false ).
+lo_property->set_nullable( abap_false ).
+lo_property->set_filterable( abap_false ).
 
 lo_entity_type->bind_structure( iv_structure_name  = 'ZCL_ZYAC_TEST_GITHUB_S_MPC=>TS_ETEST' ). "#EC NOTEXT
   endmethod.
@@ -115,7 +123,7 @@ lo_entity_type->bind_structure( iv_structure_name  = 'ZCL_ZYAC_TEST_GITHUB_S_MPC
 *&---------------------------------------------------------------------*
 
 
-  CONSTANTS: lc_gen_date_time TYPE timestamp VALUE '20170126034843'.                  "#EC NOTEXT
+  CONSTANTS: lc_gen_date_time TYPE timestamp VALUE '20170126035439'.                  "#EC NOTEXT
   rv_last_modified = super->get_last_modified( ).
   IF rv_last_modified LT lc_gen_date_time.
     rv_last_modified = lc_gen_date_time.
