@@ -7,4 +7,4 @@
 *&---------------------------------------------------------------------*
 REPORT ZYAC_TEST_GITHUB_PROG.
 
-PARAMETERS: p_test type abap_bool.
+PARAMETERS: p_test type abap_bool. " This is actually 1.1
